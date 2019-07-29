@@ -1,0 +1,52 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+#define PI 3.14
+void three()
+{
+	double a, b, c, m, area;
+	cout << "请输入三角形的边长以空格隔开：" << endl;
+	cin >> a >>b>> c;
+	m = (a + b + c) / 2;
+	area = sqrt(m*(m - a)*(m - b)*(m - c));
+	if ((a + b < c) ||(a + c < b)||(b + c< a))
+		cout << "不能构成三角形"<<endl;
+	else
+	cout << "三角形的面积" << area << endl;
+}
+void yuan()
+{
+	double a, area;
+	cout << "请输入圆的半径：" << endl;
+	cin >> a ;
+	area = PI*a*a;
+	cout << "圆的面积" << area << endl;
+}
+void fangxing()
+{
+	double a, b, area;
+	cout << "请输入长方形的边长以空格隔开：" << endl;
+	cin >> a >> b ;
+	area =a*b;
+	cout << "三角形的面积" << area << endl;
+}
+int main()
+{
+	cout << "请输入以下数字计算不同的图形面积：";
+		cout << "1.三角形  2. 圆形  3. 长方形";
+		int a;
+		do{
+			cin >> a;
+			switch (a)
+			{
+			case 1:three(); break;
+			case 2:yuan(); break;
+			case 3:fangxing(); break;
+			default:cout << "输入数字不对" << endl;
+				break;
+			}
+		} while (a != 1 && a != 2 && a != 3);
+		system("pause");
+		return 0;
+}
+
